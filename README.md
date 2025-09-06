@@ -1,4 +1,4 @@
-# Terraform Cloud Demo — ACME Cloud 2.0
+# Terraform Cloud Demo - ACME Cloud 2.0
 
 This project is a technical demonstration of how **Terraform Cloud (TFC)** can be used to standardize infrastructure provisioning across multiple teams and cloud environments.
 
