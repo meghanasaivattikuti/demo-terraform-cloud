@@ -2,7 +2,7 @@
 
 This project is a technical demonstration of how **Terraform Cloud (TFC)** can be used to standardize infrastructure provisioning across multiple teams and cloud environments.
 
-It is designed for a mock client — **ACME Corp** — as part of a Cloud 2.0 initiative focused on improving consistency, collaboration and cost efficiency in provisioning workflows.
+It is designed for a mock client **ACME Corp** as part of a Cloud 2.0 initiative focused on improving consistency, collaboration and cost efficiency in provisioning workflows.
 
 ## Goals
 
