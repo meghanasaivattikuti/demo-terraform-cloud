@@ -23,3 +23,4 @@ variable "key_name" {
   description = "SSH key name to attach to the instance"
   type        = string
 }
+
