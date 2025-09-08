@@ -1,5 +1,5 @@
 module "networking" {
-  source               = "./modules/networking"
+  source               = "../../modules/networking"
   cidr_block           = "10.0.0.0/16"
   vpc_name             = "acme-vpc"
   public_subnet_count  = 2
@@ -7,13 +7,13 @@ module "networking" {
 }
 #Testing change1
 module "security" {
-  source  = "./modules/security"
+  source  = "../../modules/security"
   vpc_id  = module.networking.vpc_id
   sg_name = "acme-web-sg"
 }
 
 module "compute" {
-  source = "./modules/compute"
+  source = "../../modules/compute"
 
   ami_id             = var.ami_id
   instance_type      = var.instance_type
