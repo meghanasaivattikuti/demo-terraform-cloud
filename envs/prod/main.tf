@@ -5,8 +5,7 @@ module "networking" {
   public_subnet_count  = 2
   private_subnet_count = 2
 }
-#Testing changes
-#infra changes1
+
 module "security" {
   source  = "../../modules/security"
   vpc_id  = module.networking.vpc_id
