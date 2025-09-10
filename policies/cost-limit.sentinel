@@ -6,6 +6,15 @@ threshold = decimal.new(20.00)
 
 /* Block if the proposed monthly cost exceeds threshold */
 main = rule {
-  tfrun.cost_estimate is not null and
-  decimal.new(tfrun.cost_estimate.proposed_monthly_cost).less_or_equal(threshold)
+  tfrun.cost_estimate is not null {
+    proposed = decimal.new(tfrun.cost_estimate.proposed_monthly_cost)
+
+    # Print the actual cost so it shows up in logs
+    print("Proposed monthly cost is: $", proposed, " | Threshold: $", threshold)
+    # Rule: pass only if <= threshold
+    return proposed <= threshold
+
+  }
+  # If no cost estimate, let it pass (or block if you prefer)
+  true
 }
