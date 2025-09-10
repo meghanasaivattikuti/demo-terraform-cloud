@@ -9,7 +9,7 @@ module "networking" {
 module "security" {
   source  = "../../modules/security"
   vpc_id  = module.networking.vpc_id
-  sg_name = "acme-web-sgs"
+  sg_name = "acme-web-ss"
 }
 
 module "compute" {
