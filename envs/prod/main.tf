@@ -3,7 +3,7 @@ module "networking" {
   cidr_block           = "10.0.0.0/16"
   vpc_name             = "acme-vpc"
   public_subnet_count  = 3
-  private_subnet_count = 2
+  private_subnet_count = 3
 }
 
 module "security" {
