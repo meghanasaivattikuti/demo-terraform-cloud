@@ -12,7 +12,7 @@ variable "ami_id" {
 variable "instance_type" {
   description = "EC2 instance type"
   type        = string
-  default     = "t.large"
+  default     = "t3.large"
 }
 
 variable "key_name" {
