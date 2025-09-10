@@ -2,8 +2,8 @@ module "networking" {
   source               = "../../modules/networking"
   cidr_block           = "10.0.0.0/16"
   vpc_name             = "acme-vpc"
-  public_subnet_count  = 3
-  private_subnet_count = 3
+  public_subnet_count  = 5
+  private_subnet_count = 5
 }
 
 module "security" {
