@@ -1,0 +1,11 @@
+import "tfrun"
+import "decimal"
+
+/* force a fail  */
+threshold = decimal.new(20.00)
+
+/* Block if the proposed monthly cost exceeds threshold */
+main = rule {
+  tfrun.cost_estimate is not null and
+  decimal.new(tfrun.cost_estimate.proposed_monthly_cost).less_or_equal(threshold)
+}
