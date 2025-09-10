@@ -4,14 +4,14 @@ import "decimal"
 threshold = decimal.new(20.00)
 
 main = rule {
-  # Only run check if cost estimate is available
-  if tfrun.cost_estimate is null {
-    print("No cost estimate available, skipping policy.")
-    true
-  } else {
-    proposed = decimal.new(tfrun.cost_estimate.proposed_monthly_cost)
-    print("Proposed monthly cost is: $", proposed, " | Threshold: $", threshold)
+  # If no cost estimate, allow the run (to avoid hard fail)
+  tfrun.cost_estimate is null or within_threshold
+}
 
-    proposed <= threshold
-  }
+within_threshold = rule {
+  proposed = decimal.new(tfrun.cost_estimate.proposed_monthly_cost)
+
+  print("Proposed monthly cost is: $", proposed, " | Threshold: $", threshold)
+
+  proposed <= threshold
 }
